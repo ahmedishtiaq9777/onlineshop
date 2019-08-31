@@ -1,0 +1,142 @@
+@using onlineshop.Models
+@model Tuple<Products,List<SizeColor>>
+
+
+
+<section class="white-backgorund">
+<div class="container">
+    <div class="row">
+        <!-- start sidebar -->
+        <div class="col-sm-4">
+            <div class="carousel slide product-slider" data-ride="carousel" data-interval="false">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <figure>
+                            <img src="@Model.Item1.ProductImg1" alt="NULL">
+                        </figure>
+                    </div><!-- end item -->
+                    <div class="item">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe  src="@Model.Item1.ProductImg2"alt="Null"></iframe>
+                        </div>
+                    </div><!-- end item -->
+                    <div class="item">
+                        <figure>
+                            <img src="@Model.Item1.ProductImg3" alt="Null">
+                        </figure>
+                    </div><!-- end item -->
+               
+                    <!-- Arrows -->
+                    <a class="left carousel-control"  data-slide="prev">
+                        <span class="fa fa-angle-left"></span>
+                    </a>
+                    <a class="right carousel-control"  data-slide="next">
+                        <span class="fa fa-angle-right"></span>
+                    </a>
+                </div><!-- end carousel-inner -->
+                <!-- thumbs -->
+                <ol class="carousel-indicators mCustomScrollbar meartlab">
+                    <li data-target=".product-slider" data-slide-to="0" class="active"><img src="@Model.Item1.ProductImg1" alt=""></li>
+                    <li data-target=".product-slider" data-slide-to="1"><img src="@Model.Item1.ProductImg2" alt=""></li>
+                    <li data-target=".product-slider" data-slide-to="2"><img src="@Model.Item1.ProductImg3" alt=""></li>
+                   
+                </ol><!-- end carousel-indicators -->
+            </div><!-- end carousel -->
+        </div><!-- end col -->
+        <!-- end sidebar -->
+        <div class="col-sm-8">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="title">@Model.Item1.ProductTitle</h2>
+                    <p class="text-gray alt-font">@Model.Item1.ProductCode</p>
+
+                    <ul class="list list-inline">
+                        <li><h5 class="text-primary">$@Model.Item1.ProductPrice</h5></li>
+                        <li>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star text-warning"></i>
+                            <i class="fa fa-star-half-o text-warning"></i>
+                        </li>
+                        <li><a href="javascript:void(0);">(4 reviews)</a></li>
+                    </ul>
+                </div><!-- end col -->
+            </div><!-- end row -->
+
+            <hr class="spacer-5"><hr class="spacer-10 no-border">
+            <form asp-action="">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <select   class="form-control" name="select">
+                            <option value="" selected="">Color</option>
+                            @foreach (SizeColor s in Model.Item2)
+                           {
+                                <option value="@s.Color">@s.Color</option>
+                               }
+
+                        </select>
+                    </div><!-- end col -->
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <select class="form-control" name="select">
+                            <option value="">Size</option>
+                            @foreach (SizeColor s in Model.Item2)
+                        {
+                                <option value="@s.Size">@s.Size</option>
+                        }
+                        </select>
+                    </div><!-- end col -->
+                    <div class="col-md-4 col-sm-12">
+                        <select class="form-control" name="select">
+                            <option value="" selected="">QTY</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                            <option value="">6</option>
+                            <option value="">7</option>
+                        </select>
+                    </div><!-- end col -->
+                </div><br />
+                <br />
+                <div class="pull-left">
+                    <button type="submit" class="btn btn-default"><span class="icon icon-shopping_basket"></span> Add to Cart</button>
+                </div>
+
+            </form>
+        </div><!-- end col -->
+    </div>
+    <hr class="spacer-60">
+
+</div><!--end container-->
+    </section>
+
+
+@section scripts{
+
+    
+   @* <script>
+                    $(document).ready(function () {
+
+
+
+
+                            $.ajax({
+                                type: "post",
+                                url: "/User/sizecolor",
+                                data: { id:  },
+                                success: function (data) {
+
+                                 }
+
+                            });
+
+
+
+                    });
+
+    </script>
+*@
+       }
+   

@@ -1,0 +1,31 @@
+<div class="tab-pane" id="shopping-cart">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th colspan="2">Products</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th colspan="2">Total</th>
+                </tr>
+            </thead>
+            <tbody id="viewcartitem">
+                <text>CART EMPTY</text>
+            </tbody>
+
+        </table><!-- end table -->
+    </div><!-- end table-responsive -->
+    <a id="l">click</a>
+</div><!-- end tab-pane -->
+
+
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+   
+}

@@ -1,0 +1,53 @@
+@model IEnumerable<onlineshop.Models.Products>
+
+@{
+    ViewData["Title"] = "shirt";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row column-4">
+    @foreach (Products i in Model)
+    {
+
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail store style1">
+                <div class="header">
+                    <div class="badges">
+                        <span class="product-badge top left primary-background text-white semi-circle">@i.Type</span>
+                        <span class="product-badge top right text-warning">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-half-o"></i>
+                        </span>
+                    </div>
+                    <figure class="layer">
+                        <a href="javascript:void(0);">
+                            <img src="@i.ProductImg1" alt="">
+
+                        </a>
+                    </figure>
+                    <div class="icons">
+                        <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-heart-o"></i></a>
+                        <a class="icon semi-circle" href="javascript:void(0);"><i class="fa fa-gift"></i></a>
+                        <a class="icon semi-circle" href="javascript:void(0);" data-toggle="modal" data-target=".productQuickView"><i class="fa fa-search"></i></a>
+                    </div>
+                </div>
+                <div class="caption">
+                    <h6 class="regular"><a href="shop-single-product-v1.html">@i.ProductTitle</a></h6>
+                    <div class="price">
+
+                        <span class="amount text-primary">@i.ProductPrice</span>
+
+
+                    </div>
+                    <input type="submit" value="Add to cart" />
+                    <a href="/User/?id=@i"></a>
+
+
+                </div><!-- end caption -->
+            </div><!-- end thumbnail -->
+        </div><!-- end col -->
+
+    }
+</div><!-- end row -->

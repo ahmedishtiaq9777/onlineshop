@@ -1,0 +1,380 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - onlineshop</title>
+
+    <environment names="Development">
+
+        <link href="~/css/new 1.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        @*<link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" />*@
+        <link rel="stylesheet" type="text/css" href="~/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/owl.carousel.min.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/owl.theme.default.min.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/animate.css" />
+        <link rel="stylesheet" type="text/css" href="~/css/swiper.css" />
+        @*<link rel="stylesheet" href="~/css/site.css" />*@
+
+
+        <!-- this is default skin you can replace that with: dark.css, yellow.css, red.css ect -->
+        <link id="pagestyle" rel="stylesheet" type="text/css" href="~/css/default.css" />
+
+        <!-- Google fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
+
+        <!--Favicon-->
+        <link rel="shortcut icon" href="~/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="~/img/favicon.ico" type="image/x-icon">
+
+
+    </environment>
+    <environment names="Staging,Production">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+    @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
+</head>
+<body>
+
+
+
+    
+
+
+
+
+
+
+   @Html.Partial("header")
+        @RenderBody()
+        <hr/>
+        @Html.Partial("footer")
+
+  
+    
+
+        <environment names="Development">
+            <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+            @*<script src="~/js/site.js" asp-append-version="true"></script>*@
+
+
+
+
+            @*<script type="text/javascript" src="~/js/jquery-3.1.1.min.js"></script>*@
+            @*<script type="text/javascript" src="~/js/bootstrap.min.js"></script>*@
+            <script type="text/javascript" src="~/js/owl.carousel.min.js"></script>
+            <script type="text/javascript" src="~/js/jquery.downCount.js"></script>
+            <script type="text/javascript" src="~/js/nouislider.min.js"></script>
+            <script type="text/javascript" src="~/js/jquery.sticky.js"></script>
+            <script type="text/javascript" src="~/js/pace.min.js"></script>
+            <script type="text/javascript" src="~/js/star-rating.min.js"></script>
+            <script type="text/javascript" src="~/js/wow.min.js"></script>
+            <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+            <script type="text/javascript" src="~/js/gmaps.js"></script>
+            <script type="text/javascript" src="~/js/swiper.min.js"></script>
+            <script type="text/javascript" src="~/js/main.js"></script>
+            <script src="~/js/jquery.cookie.js"></script>
+            <script>
+                var swiperH = new Swiper('.swiper-coverflow', {
+                    pagination: '.swiper-pagination',
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
+                    paginationClickable: true,
+                    effect: 'coverflow',
+                    centeredSlides: true,
+                    slidesPerView: 'auto',
+                    loop: true,
+                    coverflow: {
+                        rotate: 50,
+                        stretch: 0,
+                        depth: 100,
+                        modifier: 1,
+                        slideShadows: true
+                    }
+                });
+            </script>
+            <script>
+                $(document).ready(function () {
+
+                    var procodes = $.cookie("productcodes");
+                    if (procodes != undefined && procodes != null) {
+                        var splited = procodes.split("-");
+                        //alert(splited.length);
+                        $("sup").html(splited.length);
+                    }
+
+                    $("#cart").hover(function () {
+                        var pcodes = $.cookie("productcodes");
+                        if (pcodes != null && pcodes != undefined && pcodes != '') {
+
+
+                            var split = pcodes.split("-");
+                            //var i;
+                            //for (i = 0; i < split.length; i++)
+                            //{
+                            $.ajax({
+
+                                type: "post",
+                                url: "/User/returnproductinfo/",
+                                data: { code: split },
+                                success: function (data) {
+                                    $(".cart-items").html(data);
+                                    $("#myid").html("1212");
+
+                                }
+
+
+
+                            });
+                        }
+
+                        //}
+
+                        //var procodes = $.cookie("productcodes");
+                        //var splited = procodes.split("-");
+                        ////alert(splited.length);
+                        //$("sup").html(splited.length);
+                    });
+
+
+
+
+
+
+
+                    //$("#addtocart").click(function () {
+                    //   var id = $(this).attr('data-key');
+                    //    alert(id);
+
+                    //});
+                    $(".addtocart").on("click", function () {
+                        var size = selectcolorclassitem();
+                        var pcode = $(this).attr('data-key');
+                        var codes = $.cookie("productcodes");
+                        if (size != null && size != undefined) {
+                            pcode = pcode + "_" + size;
+                        }
+
+                        //  var splitcodes1 = codes.split("-");
+
+                        //  alert("ahmed");
+                        if (codes != null && codes != "" && codes != undefined) {
+                            // var clas = $(this).attr("class");
+                            //alert(clas);
+
+
+                            var temp = codes + "-" + pcode;
+                            $.cookie("productcodes", temp, { path: "/" });
+
+                            //  alert(codes);
+
+                            var splitcodes = codes.split("-");
+
+                            $("sup").html(splitcodes.length + 1);
+                            swal("Added!", "Your Product is Added to the Cart!", "success");
+                            // alert("added");
+                            // alert(splitcodes.length);
+
+
+                        } else {
+                            $.cookie("productcodes", pcode, { path: "/" });
+                            swal("Added!", "Your Product is Added to the Cart!", "success");
+                            $("sup").html(1);
+                        }
+
+
+
+
+                    });
+
+
+
+                    $(".s").click(function () {
+
+                        removecolor();
+
+                        $(this).addClass("color");
+
+                    });
+
+
+                    $("#viewcart").click(function () {
+                        var pcodes = $.cookie("productcodes");
+                        if (pcodes != null && pcodes != undefined && pcodes != '') {
+
+
+                            var split = pcodes.split("-");
+
+                            $.ajax({
+                                type: "post",
+                                url: "/User/viewcartitem/",
+                                data: { code: split },
+                                success: function (data) {
+                                    $("#viewcartitem").html(data);
+                                    //$("#myid").html("1212");
+
+                                }
+
+                            });
+                        }
+                    });
+
+                    $("tbody").on("click", "a.clos", function () {
+                        alert("ahmed");
+                    });
+
+                    //Delete product from cookie
+                    $("tbody").on("click", "a.cl", function () {
+
+                        var pcode = $(this).attr('data-key');
+                        //alert(pcode);
+                        //  var code=pcode.split("_");
+                        var codes = $.cookie("productcodes");
+                        //codes.replace(code + "_", "");
+                        //  alert(codes);
+                        var split = codes.split("-");
+                       // alert(split.length);
+                        var i;
+                        var ar;
+                        var count = 0;
+                        var res;
+                        for (i = 0; i < split.length; i++) {
+                            ar = split[i].split("_");
+                            // alert(ar[0]);
+                            if (ar[0] == pcode) {
+                                if (count != split.length - 1) {
+                                    res = codes.replace(split[i] + "-", "");
+                                    //alert(res);
+                                } else {
+                                    res = codes.replace("-" + split[i], "");
+                                    //  alert(res);
+                                }
+                            }
+                            count++;
+
+
+                        }
+
+                        $.cookie("productcodes", res, { path: "/" });
+
+                        var pcodes = $.cookie("productcodes");
+                        if (pcodes != null && pcodes != undefined && pcodes != '') {
+
+
+                            var split2 = pcodes.split("-");
+
+
+                            $.ajax({
+                                type: "post",
+                                url: "/User/viewcartitem/",
+                                data: { code: split2 },
+                                success: function (data) {
+                                    $("#viewcartitem").html(data);
+                                    //$("#myid").html("1212");
+
+                                }
+
+
+
+                            });
+                        }
+                    });
+                //    $("ss").cha
+
+                    $("tbody").on("change", "select.selected", function () {
+                        var selectedQuantity = $(this).children("option:selected").val();
+
+                       $(this).parent().parent().find("td>span.total").html();
+                        var price = $(this).parent().parent().find("td>span.price").html();
+                        var p = price.split("$");
+                        var total = p[1] * selectedQuantity;
+                        $(this).parent().parent().find("td>span.total").html("$"+total);
+                      //  alert(total);
+                    });
+                });//end document
+
+
+            </script>
+            <script>
+                
+                function removecolor() {
+                    $("li").removeClass("color");
+                }
+                function selectcolorclassitem() {
+                    var k = $(".color").find(".size").html();
+                    return k;
+                }
+                
+            </script>
+            @*<script>
+            $(document).ready(function () {
+                $(".addtocart").on("click", function () {
+                    var pcode = $(this).attr('data-key');
+                    //alert(pcode);
+                    var codes = $.cookie("productcodes");
+                    if (codes == undefined) {
+                        $.cookie("productcodes", pcode, { path:"/" });
+                        alert("added");
+                    }
+
+                });
+            });
+        </script>*@
+            @*<script>
+            $(document).ready(function () {
+                $("#cart").mouseenter(function () {
+                    var num = $("#sup").val();
+                    $.ajax({
+                        type:"post",
+                        url: "/Home/about/",
+                        data: { value: num },
+                        success: function (data) {
+                            $("#update").html("Result: " + data.result);
+
+                        }
+
+                    });
+
+                });
+
+            });
+
+
+
+
+        </script>*@
+            <script>
+                $(document).ready(function () {
+                   $("#viewcart")
+                })
+            </script>
+            @*<script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/30/6/util.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/30/6/common.js"></script>
+         <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/30/6/common.js"></script>*@
+
+
+        </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/bootstrap.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

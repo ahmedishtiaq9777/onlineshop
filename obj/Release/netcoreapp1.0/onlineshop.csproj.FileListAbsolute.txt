@@ -1,0 +1,12 @@
+D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\bin\Release\netcoreapp1.0\onlineshop.deps.json
+D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\bin\Release\netcoreapp1.0\onlineshop.runtimeconfig.json
+D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\bin\Release\netcoreapp1.0\onlineshop.runtimeconfig.dev.json
+D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\bin\Release\netcoreapp1.0\onlineshop.dll
+D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\bin\Release\netcoreapp1.0\onlineshop.pdb
+D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\obj\Release\netcoreapp1.0\onlineshop.csprojAssemblyReference.cache
+D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\obj\Release\netcoreapp1.0\onlineshop.csproj.CoreCompileInputs.cache
+D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\obj\Release\netcoreapp1.0\UserSecretsAssemblyInfo.cs
+D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\obj\Release\netcoreapp1.0\onlineshop.AssemblyInfoInputs.cache
+D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\obj\Release\netcoreapp1.0\onlineshop.AssemblyInfo.cs
+D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\obj\Release\netcoreapp1.0\onlineshop.dll
+D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\obj\Release\netcoreapp1.0\onlineshop.pdb

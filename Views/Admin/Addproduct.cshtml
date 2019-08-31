@@ -1,0 +1,224 @@
+@model onlineshop.Models.Products
+
+@{
+    ViewData["Title"] = "Addproduct";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+@*<style>
+   .textinput {
+float:left;
+width:75%;
+margin-top:6px;
+}
+</style>*@
+
+<h2 style="position:relative;left:40px">Addproduct</h2>
+<div class="col-lg-8">
+<form asp-action="Addproduct" method="post" enctype="multipart/form-data">
+    <div class="form-horizontal">
+
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+        <div class="form-group">
+            <label asp-for="ProductTitle" class="col-md-2 control-label"></label>
+            <div class="col-lg-5">
+                <input asp-for="ProductTitle" class="form-control" />
+                <span asp-validation-for="ProductTitle" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductCode" class="col-md-2 control-label"></label>
+            <div class="col-lg-5">
+                <input asp-for="ProductCode" class="form-control" />
+                <span asp-validation-for="ProductCode" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductDisc" class="col-md-2 control-label"></label>
+            <div class="col-lg-12">
+                <textarea asp-for="ProductDisc" class="col-xs-12" rows="4" placeholder="Comment"></textarea>
+
+                <span asp-validation-for="ProductDisc" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductPrice" class="col-md-2 control-label"></label>
+            <div class="col-md-3">
+                <input asp-for="ProductPrice" class="form-control" />
+                <span asp-validation-for="ProductPrice" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductImg1" class="col-md-2 control-label"></label>
+            <div class="col-md-3">
+                <input asp-for="ProductImg1" type="file" id="img" name="img" class="form-control" />
+
+                <span asp-validation-for="ProductImg1" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductImg2" class="col-md-2 control-label"></label>
+            <div class="col-md-3">
+                <input asp-for="ProductImg2" type="file" id="img" name="img" class="form-control" />
+                <span asp-validation-for="ProductImg2" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductImg3" class="col-md-2 control-label"></label>
+            <div class="col-md-3">
+                <input asp-for="ProductImg3" type="file" id="img" name="img" class="form-control" />
+                <span asp-validation-for="ProductImg3" class="text-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Categories" class="col-md-2 control-label"></label>
+            <div class="col-md-3">
+                <select asp-for="Categories" class="form-control">
+                    <optgroup label="Men" class="col-xs-12">
+                        <option value="MenPolos">Polos</option>
+                        <option value="MenShirts">Shirts</option>
+                        <option value="MenTshirts">Tshirts</option>
+                        <option value="MenDenim">DENIM</option>
+                        <option value="MenNonDenim">Non DENIM</option>
+                        <option value="MenSweater">SWEATER</option>
+                        <option value="MenCout">COUT</option>
+                        <option value="MenUpper">UPPER</option>
+                        <option value="MenJacket">JACKET</option>
+                        <option value="MenShoes">SHOES</option>
+                        <option value="MenBags">BAGS</option>
+                    </optgroup>
+                    <optgroup label="Women" class="col-xs-12">
+                        <option value="WomenTops">Tops</option>
+                        <option value="WomenBottom">Bottom</option>
+                        <option value="WomenShowls">Showls</option>
+                        <option value="WomenSweater">SWEATER</option>
+                        <option value="WomenCout">COUT</option>
+                        <option value="WomenUpper">UPPER</option>
+                        <option value="WomenJacket">jACKET</option>
+                        <option value="WomenShoes">SHOES</option>
+                        <option value="WomenBags">BAGS</option>
+                    </optgroup>
+                    <optgroup label="boyKids(1-5)year" class="col-xs-12">
+                        <option value="boyKids(1-5)Shirts">Shirts</option>
+                        <option value="boyKids(1-5)Tshirts">Tshirts</option>
+                        <option value="boyKids(1-5)Bottom">Bottom</option>
+                        <option value="boyKids(1-5)Sweater">SWEATER</option>
+                        <option value="boyKids(1-5)Cout">COUT</option>
+                        <option value="boyKids(1-5)Upper">UPPER</option>
+                        <option value="boyKids(1-5)Jacket">jACKET</option>
+                        <option value="boyKids(1-5)Shoes">SHOES & Accessaries</option>
+
+                    </optgroup>
+                    <optgroup label="boyKids(6-12)year" class="col-xs-12">
+                        <option value="boyKids(6-12)Shirts">Shirts</option>
+                        <option value="boyKids(6-12)Tshirts">Tshirts</option>
+                        <option value="boyKids(6-12)Bottom">Bottom</option>
+                        <option value="boyKids(6-12)Sweater">SWEATER</option>
+                        <option value="boyKids(6-12)Cout">COUT</option>
+                        <option value="boyKids(6-12)Upper">UPPER</option>
+                        <option value="boyKids(6-12)Jacket">jACKET</option>
+                        <option value="boyKids(6-12)Shoes">SHOES & Accesaries</option>
+
+                    </optgroup>
+
+                    <optgroup label="GirlKids(1-5)year" class="col-xs-12">
+                        <option value="GirlKids(1-5)Tops">Tops</option>
+                        <option value="GirlKids(1-5)Bottom">Bottom</option>
+                        <option value="GirlKids(1-5)Tees">Tees</option>
+                        <option value="GirlKids(1-5)Sweater">SWEATER</option>
+                        <option value="GirlKids(1-5)Cout">COUT</option>
+                        <option value="GirlKids(1-5)Upper">UPPER</option>
+                        <option value="GirlKids(1-5)Jacket">jACKET</option>
+                        <option value="GirlKids(1-5)Shoes">SHOES & Accesaries</option>
+
+                    </optgroup>
+
+                    <optgroup label="GirlKids(6-12)year" class="col-xs-12">
+                        <option value="Girlkids(6-12)top">Tops</option>
+                        <option value="Girlkids(6-12)Bottom">Bottom</option>
+                        <option value="GirlKids(6-12)Tees">Tees</option>
+                        <option value="GirlKids(6-12)Sweater">SWEATER</option>
+                        <option value="GirlKids(6-12)Cout">COUT</option>
+                        <option value="GirlKids(6-12)Upper">UPPER</option>
+                        <option value="GirlKids(6-12)Jacket">jACKET</option>
+                        <option value="GirlKids(6-12)Shoes">SHOES & Accesaries</option>
+
+                    </optgroup>
+                    <optgroup label="Accesarries" class="col-xs-12">
+                        <option value="AccesariesMen">MEN</option>
+                        <option value="AccesariesWomen">WOMEN</option>
+
+                    </optgroup>
+
+
+
+
+
+
+                </select>
+
+                <span asp-validation-for="Categories" class="text-danger" />
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label asp-for="Brand" class="col-md-2 control-label"></label>
+            <div class="col-md-3">
+                <select asp-for="Brand" class="form-control">
+                    <option>Outfitter</option>
+                    <option>Breakout</option>
+                    <option>Clocks</option>
+
+                </select>
+                <span asp-validation-for="Brand" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductQty" class="col-md-2 control-label"></label>
+            <div class="col-md-3">
+                <input asp-for="ProductQty" type="number" max="10" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Type" class="col-md-2 control-label"></label>
+            <div class="col-md-3">
+                <select asp-for="Type" class="form-control">
+                    <option value="new">New Arrival</option>
+                    <option value="top">Top Rated</option>
+                    <option value="sale">On Sale</option>
+
+                </select>
+                <span asp-validation-for="Brand" class="text-danger" />
+            </div>
+        </div>
+
+
+
+        @*<div class="form-group">
+            <label asp-for="Type" class="col-md-2 control-label"></label>
+            <div class="col-md-3">
+                <select asp-for="Type" class="form-control">
+                    <option>Shirt</option>
+                    <option>Pent</option>
+                    <option>Shoes</option>
+                </select>
+                <span asp-validation-for="Type" class="text-danger" />
+            </div>
+        </div>*@
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add product" class="btn btn-default" />
+            </div>
+        </div>
+        <button><a asp-action="Index">Back to List</a></button>
+    </div>
+</form>
+    </div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

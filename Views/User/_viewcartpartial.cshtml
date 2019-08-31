@@ -1,0 +1,42 @@
+@using onlineshop.Models;
+@model IEnumerable<Products>
+
+
+<a class="clos">click</a>
+
+@foreach (Products p in Model)
+{
+
+
+<tr>
+    <td>
+        <a href="javascript:void(0);">
+            <img width="60px" src="@p.ProductImg1"  alt="product">
+        </a>
+    </td>
+    <td>
+        <h6 class="regular"><a href="javascript:void(0);">@p.ProductTitle</a></h6>
+        <p>@p.ProductDisc</p>
+    </td>
+    <td>
+        <span class="price">$@p.ProductPrice</span>
+    </td>
+    <td>
+        <select class="form-control selected" name="select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </td>
+    <td>
+        <span class="text-primary total">$0</span>
+    </td>
+    <td>
+        <div class="close-icon">
+            <a href="javascript:void(0);" data-key="@p.ProductCode" class="cl"><i class="fa fa-close"></i></a>
+        </div>
+    </td>
+</tr>
+}

@@ -1,0 +1,99 @@
+﻿
+
+
+
+<section class="section white-backgorund">
+    <div class="container">
+        <div class="row">
+
+            @Html.Partial("account_nav")
+
+
+        <div class="col-sm-9">
+            <div class="row">
+                <div class="col-sm-12 text-left">
+                    <h2 class="title">Checkout</h2>
+                </div><!-- end col -->
+            </div><!-- end row -->
+
+            <hr class="spacer-5"><hr class="spacer-20 no-border">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="nav nav-pills style2 nav-justified">
+                        <li class="">
+                            <a href="#shopping-cart" id="viewcart" data-toggle="tab" aria-expanded="false">
+                                1. Shopping Cart
+                                <div class="icon">
+                                    <i class="fa fa-check"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="active">
+                            <a href="#billing-info" data-toggle="tab" aria-expanded="true">
+                                2. Billing Info
+                                <div class="icon">
+                                    <i class="fa fa-home"></i>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#payment" data-toggle="tab">
+                                3. Payment
+                                <div class="icon">
+                                    <i class="fa fa-credit-card"></i>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content pills">
+                        @Html.Partial("shoppingcart")
+                        @Html.Partial("billinginfo")
+                        @Html.Partial("payment")
+                    </div><!-- end pills content -->
+
+                    <hr class="spacer-30">
+
+                    <div class="row">
+                        <div class="col-sm-7 text-left">
+                            <form class="form-inline">
+                                <div class="form-group">
+                                    <input class="form-control input-md" type="text" placeholder="Coupon code">
+                                </div>
+                                <button class="btn btn-default btn-md round" type="submit">Apply</button>
+                            </form>
+                        </div><!-- end col -->
+
+                        <div class="col-sm-5">
+                            <div class="table-responsive">
+                                <table class="table no-border">
+                                    <tbody>
+                                        <tr>
+                                            <th>Cart Subtotal</th>
+                                            <td>$ 98,00</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Shipping and Handling</th>
+                                            <td>Free Shipping</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Order Total</th>
+                                            <td>$ 98,00</td>
+                                        </tr>
+                                    </tbody>
+                                </table><!-- end table -->
+                            </div><!-- end table-responsive -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div>
+    </div><!-- end row -->
+</div><!-- end container -->
+</section>
+@section scripts{ 
+    $(document).ready(function(){
+    alert("ahmed");
+    });
+}

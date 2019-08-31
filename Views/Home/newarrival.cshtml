@@ -1,0 +1,63 @@
+@using onlineshop.Models
+@model IEnumerable<onlineshop.Models.Products>
+<div role="tabpanel" class="tab-pane fade active in" id="newArrivals">
+
+    <div class="row column-4">
+        @foreach (Products i in Model)
+        {
+
+            <div class="col-sm-6 col-md-3">
+                <div class="thumbnail store style1">
+                    <div class="header">
+                        <div class="badges">
+                            <span class="product-badge top left primary-background text-white semi-circle">@i.Type</span>
+                            <span class="product-badge top right text-warning">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </span>
+                        </div>
+                        <figure class="">
+                            <a href="/Home/productdetail?procode=@i.ProductCode">
+                                <img src="@i.ProductImg1" alt="">
+
+                            </a>
+                        </figure>
+                       
+                    </div>
+                    <div class="caption">
+                        <h6 class="regular"><a href="/Home/productdetail?procode=@i.ProductCode">@i.ProductTitle</a></h6>
+                        <div class="price">
+                           @* <input type="text" id="#pro_id"  value="@i.ProductCode" hidden />*@
+                            <span class="amount text-primary">@i.ProductPrice</span>
+                            <br />
+                            <a class="btn btn-default" href="/User/add_to_cart?procode=@i.ProductCode">Add to cart</a>
+                        </div>
+                        
+                       
+
+
+                    </div><!-- end caption -->
+                </div><!-- end thumbnail -->
+            </div><!-- end col -->
+
+        }
+    </div><!-- end row -->
+
+</div>
+
+
+
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+
+
+}

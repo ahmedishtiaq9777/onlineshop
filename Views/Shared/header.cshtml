@@ -1,0 +1,479 @@
+<head>
+    <link href="~/css/new 1.css" rel="stylesheet" />
+
+</head>
+
+
+
+
+<div class="topBar">
+    <div class="container">
+        <ul class="list-inline pull-left hidden-sm hidden-xs">
+            <li><i class="fa fa-phone mr-5"></i>+123 4567 8910</li>
+            <li><i class="fa fa-envelope mr-5"></i>sales@yourdomain.com</li>
+        </ul>
+
+        <ul class="topBarNav pull-right">
+            @*<li class="linkdown">
+                    <a href="javascript:void(0);">
+                        <i class="fa fa-usd mr-5"></i>
+                        USD
+                        <i class="fa fa-angle-down ml-5"></i>
+                    </a>
+                    <ul class="w-100">
+                        <li><a href="javascript:void(0);"><i class="fa fa-eur mr-5"></i>EUR</a></li>
+                        <li class="active"><a href="javascript:void(0);"><i class="fa fa-usd mr-5"></i>USD</a></li>
+                        <li><a href="javascript:void(0);"><i class="fa fa-gbp mr-5"></i>GBP</a></li>
+                    </ul>
+                </li>*@
+            @*<li class="linkdown">
+                    <a href="javascript:void(0);">
+                        <img src="/img/flags/flag-french.jpg" class="mr-5" alt="">
+                        <span class="hidden-xs">
+                            French
+                            <i class="fa fa-angle-down ml-5"></i>
+                        </span>
+                    </a>
+                    <ul class="w-100">
+                        <li><a href="javascript:void(0);"><img src="/img/flags/flag-english.jpg" class="mr-5" alt="">English</a></li>
+                        <li class="active"><a href="javascript:void(0);"><img src="/img/flags/flag-french.jpg" class="mr-5" alt="">French</a></li>
+                        <li><a href="javascript:void(0);"><img src="/img/flags/flag-german.jpg" class="mr-5" alt="">German</a></li>
+                        <li><a href="javascript:void(0);"><img src="/img/flags/flag-spain.jpg" class="mr-5" alt="">Spain</a></li>
+                    </ul>
+                </li>*@
+            <li class="linkdown">
+                <a href="javascript:void(0);">
+                    <i class="fa fa-user mr-5"></i>
+                    <span class="hidden-xs">
+                        My Account
+                        <i class="fa fa-angle-down ml-5"></i>
+                    </span>
+                </a>
+                <ul class="w-150">
+                   
+                        <li><a href="/User/login">Login</a></li>
+                        <li><a href="/User/register">Create Account</a></li>
+                    
+                    <li class="divider"></li>
+                    <li><a href="User/mycart">My Cart</a></li>
+                    <li><a href="/User/checkout">Checkout</a></li>
+                </ul>
+            </li>
+            <li class="linkdown" id="cart">
+                <a href="javascript:void(0);">
+                    <i class="fa fa-shopping-basket mr-5"></i>
+                    <span class="hidden-xs">
+                        Cart<sup class="text-primary">0</sup>
+                        <i class="fa fa-angle-down ml-5"></i>
+                    </span>
+                </a>
+                <ul class="cart w-250">
+                    <li>
+                        <div class="cart-items">
+                           
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cart-footer">
+                            <a href="/User/mycart" class="pull-left"><i class="fa fa-cart-plus mr-5"></i>View Cart</a>
+                            <a href="/User/checkout" class="pull-right"><i class="fa fa-shopping-basket mr-5"></i>Checkout</a>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div><!-- end container -->
+</div>
+
+
+
+<div class="navbar yamm " style="">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle" aria-expanded="true">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="javascript:void(0);" class="navbar-brand">
+                <img src="/img/logo.png" alt="logo">
+            </a>
+        </div>
+        <div id="navbar-collapse-1" class="navbar-collapse collapse in" aria-expanded="true" style="">
+            <ul class="nav navbar-nav" style="">
+                <li><a href="/home/index">Home</a></li>
+
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">MAN<i class="fa fa-angle-down ml-5"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/User/selectedcategory?id=1">Polos</a></li>
+                        <li><a href="/User/selectedcategory?id=2">Shirts</a></li>
+                        <li><a href="/User/selectedcategory?id=3">Tshirts</a></li>
+                        <li><a href="/User/selectedcategory?id=4">Denim</a></li>
+                        <li><a href="/User/selectedcategory?id=5">Non Denim</a></li>
+                        <li><a href="/User/selectedcategory?id=6">SWEATER</a></li>
+                        <li><a href="/User/selectedcategory?id=7">COUT</a></li>
+                        <li><a href="/User/selectedcategory?id=8">UPPER</a></li>
+                        <li><a href="/User/selectedcategory?id=9">JACKET</a></li>
+                        <li><a href="/User/selectedcategory?id=10">SHOES</a></li>
+                        <li><a href="/User/selectedcategory?id=11">BAGS</a></li>
+
+                    </ul>
+
+                </li>
+
+                <li class="dropdown ">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">WOMEN<i class="fa fa-angle-down ml-5"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/User/selectedcategory?id=12">Tops</a></li><!-- end li -->
+                        <li><a href="/User/selectedcategory?id=13">Bottoms</a></li>
+                        <li><a href="/User/selectedcategory?id=14">Showls</a></li>
+                        <li><a href="/User/selectedcategory?id=15">SWEATER</a></li>
+                        <li><a href="/User/selectedcategory?id=16">COUT</a></li>
+                        <li><a href="/User/selectedcategory?id=17">UPPER</a></li>
+                        <li><a href="/User/selectedcategory?id=18">JACKET</a></li>
+                        <li><a href="/User/selectedcategory?id=19">SHOES</a></li>
+                        <li><a href="/User/selectedcategory?id=20">BAGS</a></li>
+
+                    </ul><!-- end ul dropdown-menu -->
+                </li>
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                        Kids Boy
+                        <i class="fa fa-angle-down ml-5"></i>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a href="#">(1-5)Years</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/User/selectedcategory?id=21">Shirts</a></li>
+                                <li><a href="/User/selectedcategory?id=22">Tshirts</a></li>
+                                <li><a href="/User/selectedcategory?id=23">Bottom</a></li>
+                                <li><a href="/User/selectedcategory?id=24">Sweater</a></li>
+                                <li><a href="/User/selectedcategory?id=25">Cout</a></li>
+                                <li><a href="/User/selectedcategory?id=26">Upper</a></li>
+                                <li><a href="/User/selectedcategory?id=27">Jacket</a></li>
+                                <li><a href="/User/selectedcategory?id=28">Shoes & Assesaries</a></li>
+
+
+                            </ul>
+
+                        </li><!-- end (1-6)Years-->
+
+                        <li class="dropdown-submenu">
+                            <a href="#">(6-12)Years</a>
+
+                            <ul class="dropdown-menu">
+                                <li><a href="/User/selectedcategory?id=29">Shirts</a></li>
+                                <li><a href="/User/selectedcategory?id=30">Tshirts</a></li>
+                                <li><a href="/User/selectedcategory?id=31">Bottom</a></li>
+                                <li><a href="/User/selectedcategory?id=32">Sweater</a></li>
+                                <li><a href="/User/selectedcategory?id=33">Cout</a></li>
+                                <li><a href="/User/selectedcategory?id=34">Upper</a></li>
+                                <li><a href="/User/selectedcategory?id=35">Jacket</a></li>
+                                <li><a href="/User/selectedcategory?id=36">Shoes & Assesaries</a></li>
+
+
+                            </ul>
+
+
+
+                        </li><!-- end (6-12) list-->
+
+
+
+
+                    </ul>
+
+                </li><!-- end kids boy -->
+
+
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Kids Girls<i class="fa fa-angle-down ml-5"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a href="#">(1-5)Years</a>
+                            <ul class="dropdown-menu">
+
+                                <li><a href="/User/selectedcategory?id=37">Shirts</a></li>
+                                <li><a href="/User/selectedcategory?id=38">Tshirts</a></li>
+                                <li><a href="/User/selectedcategory?id=39">Bottoms</a></li>
+                                <li><a href="/User/selectedcategory?id=40">Sweater</a></li>
+                                <li><a href="/User/selectedcategory?id=41">Cout</a></li>
+                                <li><a href="/User/selectedcategory?id=42">Upper</a></li>
+                                <li><a href="/User/selectedcategory?id=43">Jacket</a></li>
+                                <li><a href="/User/selectedcategory?id=44">Shoes & Accessaries</a></li>
+
+
+
+                            </ul>
+                        </li><!--end li dropdown-submenu -->
+                        <li class="dropdown-submenu">
+                            <a href="#">(6-12)Years</a>
+
+                            <ul class="dropdown-menu">
+
+                                <li><a href="/User/selectedcategory?id=45">Shirts</a></li>
+                                <li><a href="/User/selectedcategory?id=46">Tshirts</a></li>
+                                <li><a href="/User/selectedcategory?id=47">Bottoms</a></li>
+                                <li><a href="/User/selectedcategory?id=48">Sweater</a></li>
+                                <li><a href="/User/selectedcategory?id=49">Cout</a></li>
+                                <li><a href="/User/selectedcategory?id=50">Upper</a></li>
+                                <li><a href="/User/selectedcategory?id=51">Jacket</a></li>
+                                <li><a href="/User/selectedcategory?id=52">Shoes & Accessaries</a></li>
+
+                            </ul>
+
+                        </li><!--end li dropdown-submenu-->
+
+
+
+
+
+
+
+
+                    </ul><!--end of  kids girls-->
+
+
+
+                </li><!-- end li kids girls-->
+
+                <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">ACCESSORIES<i class="fa fa-angle-down ml-5"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/User/selectedcategory?id=53">MEN</a></li>
+                        <li><a href="/User/selectedcategory?id=54">WOMEN</a></li>
+                    </ul>
+
+
+                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </ul><!-- end navbar-nav -->
+            @*<div class="topBar">
+                    <div class="container">
+
+
+                        <ul class="topBarNav pull-right">
+
+
+                            <li class="linkdown">
+                                <a href="javascript:void(0);">
+                                    <i class="fa fa-user mr-5"></i>
+                                    <span class="hidden-xs">
+                                        My Account
+                                        <i class="fa fa-angle-down ml-5"></i>
+                                    </span>
+                                </a>
+                                <ul class="w-150">
+                                    <li><a href="login.html">Login</a></li>
+                                    <li><a href="register.html">Create Account</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="wishlist.html">Wishlist (5)</a></li>
+                                    <li><a href="cart.html">My Cart</a></li>
+                                    <li><a href="checkout.html">Checkout</a></li>
+                                </ul>
+                            </li>
+                            <li class="linkdown">
+                                <a href="javascript:void(0);">
+                                    <i class="fa fa-shopping-basket mr-5"></i>
+                                    <span class="hidden-xs">
+                                        Cart<sup class="text-primary">(3)</sup>
+                                        <i class="fa fa-angle-down ml-5"></i>
+                                    </span>
+                                </a>
+                                <ul class="cart w-250">
+                                    <li>
+                                        <div class="cart-items">
+                                            <ol class="items">
+                                                <li>
+                                                    <a href="shop-single-product-v1.html" class="product-image">
+                                                        <img src="img/products/men_06.jpg" alt="Sample Product ">
+                                                    </a>
+                                                    <div class="product-details">
+                                                        <div class="close-icon">
+                                                            <a href="javascript:void(0);"><i class="fa fa-close"></i></a>
+                                                        </div>
+                                                        <p class="product-name">
+                                                            <a href="shop-single-product-v1.html">Lorem Ipsum dolor sit</a>
+                                                        </p>
+                                                        <strong>1</strong> x <span class="price text-primary">$59.99</span>
+                                                    </div><!-- end product-details -->
+                                                </li><!-- end item -->
+                                                <li>
+                                                    <a href="shop-single-product-v1.html" class="product-image">
+                                                        <img src="img/products/shoes_01.jpg" alt="Sample Product ">
+                                                    </a>
+                                                    <div class="product-details">
+                                                        <div class="close-icon">
+                                                            <a href="javascript:void(0);"><i class="fa fa-close"></i></a>
+                                                        </div>
+                                                        <p class="product-name">
+                                                            <a href="shop-single-product-v1.html">Lorem Ipsum dolor sit</a>
+                                                        </p>
+                                                        <strong>1</strong> x <span class="price text-primary">$39.99</span>
+                                                    </div><!-- end product-details -->
+                                                </li><!-- end item -->
+                                                <li>
+                                                    <a href="shop-single-product-v1.html" class="product-image">
+                                                        <img src="img/products/bags_07.jpg" alt="Sample Product ">
+                                                    </a>
+                                                    <div class="product-details">
+                                                        <div class="close-icon">
+                                                            <a href="javascript:void(0);"><i class="fa fa-close"></i></a>
+                                                        </div>
+                                                        <p class="product-name">
+                                                            <a href="shop-single-product-v1.html">Lorem Ipsum dolor sit</a>
+                                                        </p>
+                                                        <strong>1</strong> x <span class="price text-primary">$29.99</span>
+                                                    </div><!-- end product-details -->
+                                                </li><!-- end item -->
+                                            </ol>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="cart-footer">
+                                            <a href="cart.html" class="pull-left"><i class="fa fa-cart-plus mr-5"></i>View Cart</a>
+                                            <a href="checkout.html" class="pull-right"><i class="fa fa-shopping-basket mr-5"></i>Checkout</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div><!-- end container -->
+                </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            @*<ul class="nav navbar-nav pull-right col-lg-3 topBarNav" style="background-color:black;">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" data-toggle="dropdown">
+                            <i class="fa fa-shopping-basket mr-5"></i>
+                            <span class="hidden-xs">
+                                Cart<sup class="text-primary">(3)</sup>
+                                <i class="fa fa-angle-down ml-5"></i>
+                            </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="dropdown-submenu">
+                                    <ol class="items col-lg-12" style="overflow:scroll">
+                                        <li>
+                                            <a href="shop-single-product-v1.html" class="product-image">
+                                                <img src="/img/products/men_06.jpg" class="col-lg-3"  alt="Sample Product ">
+                                            </a>
+                                            <div class="product-details">
+                                                <div class="close-icon">
+                                                    <a href="javascript:void(0);"><i class="fa fa-close"></i></a>
+                                                </div>
+                                                <p class="product-name">
+                                                    <a href="shop-single-product-v1.html">Lorem Ipsum dolor sit</a>
+                                                </p>
+                                                <strong>1</strong> x <span class="price text-primary">$59.99</span>
+                                            </div><!-- end product-details -->
+                                        </li><!-- end item -->
+                                        <li>
+                                            <a href="shop-single-product-v1.html" class="product-image">
+                                                <img src="/img/products/shoes_01.jpg"  class="col-lg-3"alt="Sample Product ">
+                                            </a>
+                                            <div class="product-details">
+                                                <div class="close-icon">
+                                                    <a href="javascript:void(0);"><i class="fa fa-close"></i></a>
+                                                </div>
+                                                <p class="product-name">
+                                                    <a href="shop-single-product-v1.html">Lorem Ipsum dolor sit</a>
+                                                </p>
+                                                <strong>1</strong> x <span class="price text-primary">$39.99</span>
+                                            </div><!-- end product-details -->
+                                        </li><!-- end item -->
+                                        <li>
+                                            <a href="shop-single-product-v1.html" class="product-image">
+                                                <img src="/img/products/men_06.jpg" class="col-lg-3" alt="Sample Product ">
+                                            </a>
+                                            <div class="product-details">
+                                                <div class="close-icon">
+                                                    <a href="javascript:void(0);"><i class="fa fa-close"></i></a>
+                                                </div>
+                                                <p class="product-name">
+                                                    <a href="shop-single-product-v1.html">Lorem Ipsum dolor sit</a>
+                                                </p>
+                                                <strong>1</strong> x <span class="price text-primary">$59.99</span>
+                                            </div><!-- end product-details -->
+                                        </li><!-- end item -->
+                                        <li>
+                                            <a href="shop-single-product-v1.html" class="product-image">
+                                                <img src="/img/products/men_06.jpg" class="col-lg-3" alt="Sample Product ">
+                                            </a>
+                                            <div class="product-details">
+                                                <div class="close-icon">
+                                                    <a href="javascript:void(0);"><i class="fa fa-close"></i></a>
+                                                </div>
+                                                <p class="product-name">
+                                                    <a href="shop-single-product-v1.html">Lorem Ipsum dolor sit</a>
+                                                </p>
+                                                <strong>1</strong> x <span class="price text-primary">$59.99</span>
+                                            </div><!-- end product-details -->
+                                        </li><!-- end item -->
+
+
+
+
+
+
+
+
+                                    </ol>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="cart-footer">
+                                    <a href="cart.html" class="pull-left"><i class="fa fa-cart-plus mr-5"></i>View Cart</a>
+                                    <a href="checkout.html" class="pull-right"><i class="fa fa-shopping-basket mr-5"></i>Checkout</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>*@
+
+
+
+            <!-- right side of navbar-->
+
+        </div><!--end navbar-collaps-->
+    </div><!--end comtainer-->
+</div><!--end navbar-->
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
