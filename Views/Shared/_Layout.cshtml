@@ -111,7 +111,14 @@
                         //alert(splited.length);
                         $("sup").html(splited.length);
                     }
-
+                    //$("tbody>tr").each(function () {
+                    //    var v = (this).find("td>span.price").html();
+                    //    alert(v);
+                    //                            });
+                   // var sub = addtotals();
+                   //$("#subtotal").html("$" + sub);
+                   //$("#ordertot").html("$" + sub);
+                   // swal("Added!", "Your Product is Added to the Cart!", "success");
                     $("#cart").hover(function () {
                         var pcodes = $.cookie("productcodes");
                         if (pcodes != null && pcodes != undefined && pcodes != '') {
@@ -208,6 +215,12 @@
 
 
                     $("#viewcart").click(function () {
+
+
+
+
+
+
                         var pcodes = $.cookie("productcodes");
                         if (pcodes != null && pcodes != undefined && pcodes != '') {
 
@@ -228,9 +241,9 @@
                         }
                     });
 
-                    $("tbody").on("click", "a.clos", function () {
-                        alert("ahmed");
-                    });
+                    //$("tbody").on("click", "a.clos", function () {
+                    //    alert("ahmed");
+                    //});
 
                     //Delete product from cookie
                     $("tbody").on("click", "a.cl", function () {
@@ -293,18 +306,57 @@
                     $("tbody").on("change", "select.selected", function () {
                         var selectedQuantity = $(this).children("option:selected").val();
 
-                       $(this).parent().parent().find("td>span.total").html();
+                      // $(this).parent().parent().find("td>span.total").html();
                         var price = $(this).parent().parent().find("td>span.price").html();
                         var p = price.split("$");
                         var total = p[1] * selectedQuantity;
-                        $(this).parent().parent().find("td>span.total").html("$"+total);
+                        $(this).parent().parent().find("td>span.total").html("$" + total);
+                        var subtotal;
+                        subtotal = addtotals();
+                        $("#subtotal").html("$" + subtotal);
+                        $("#ordertot").html("$" + subtotal);
                       //  alert(total);
                     });
+                    //$("tbody").on("click", "a#kk", function () {
+
+                    //    var k = $("a#kk").html();
+                    //    var k2 = k.split("$")
+
+                    //    alert(k2[1]);
+                    //});
+
+                   
                 });//end document
 
+                $(window).ready(function () {
+                   // alert("ahmed");
+                    var array;
 
+                    //$("tbody").find("tr>td>span.price").each(function () {
+                    //    var price = $(this).html();
+                    //    var psplit = price.split("$");
+                    //    array
+
+                    //});
+                    
+                });
             </script>
             <script>
+                function addtotals() {
+                    var subtot = 0.0;
+                    var k;
+                    var k2;
+                    $("tbody#viewcartitem>tr").each(function () {
+
+                        // var k= $(this).children("td>span.total").html();
+                        k = $(this).find("td.tot>span").html();
+                        k2 = k.split("$");
+                        var k3 = parseFloat(k2[1]);
+                        subtot = subtot + k3;
+
+                    });
+                    return subtot;
+                }
                 
                 function removecolor() {
                     $("li").removeClass("color");

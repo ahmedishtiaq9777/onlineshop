@@ -1,5 +1,5 @@
-﻿
-
+﻿@using onlineshop.Models;
+@model IEnumerable<Products>
 
 
 <section class="section white-backgorund">
@@ -21,16 +21,16 @@
             <div class="row">
                 <div class="col-sm-12">
                     <ul class="nav nav-pills style2 nav-justified">
-                        <li class="">
-                            <a href="#shopping-cart" id="viewcart" data-toggle="tab" aria-expanded="false">
+                        <li class="active">
+                            <a href="#shopping-cart" id="viewcart" data-toggle="tab" >
                                 1. Shopping Cart
                                 <div class="icon">
                                     <i class="fa fa-check"></i>
                                 </div>
                             </a>
                         </li>
-                        <li class="active">
-                            <a href="#billing-info" data-toggle="tab" aria-expanded="true">
+                        <li class="">
+                            <a href="#billing-info" data-toggle="tab" >
                                 2. Billing Info
                                 <div class="icon">
                                     <i class="fa fa-home"></i>
@@ -48,7 +48,7 @@
                     </ul>
 
                     <div class="tab-content pills">
-                        @Html.Partial("shoppingcart")
+                        @Html.Partial("shoppingcart",Model)
                         @Html.Partial("billinginfo")
                         @Html.Partial("payment")
                     </div><!-- end pills content -->
@@ -70,8 +70,8 @@
                                 <table class="table no-border">
                                     <tbody>
                                         <tr>
-                                            <th>Cart Subtotal</th>
-                                            <td>$ 98,00</td>
+                                            <th>Cart Subtotal</th>                                           
+                                            <td id="subtotal">0</td>
                                         </tr>
                                         <tr>
                                             <th>Shipping and Handling</th>
@@ -79,7 +79,7 @@
                                         </tr>
                                         <tr>
                                             <th>Order Total</th>
-                                            <td>$ 98,00</td>
+                                            <td id="ordertot">$ 98,00</td>
                                         </tr>
                                     </tbody>
                                 </table><!-- end table -->

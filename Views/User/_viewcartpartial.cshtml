@@ -2,8 +2,8 @@
 @model IEnumerable<Products>
 
 
-<a class="clos">click</a>
-
+@*<a class="clos">click</a>
+<a id="kk">$12</a>*@
 @foreach (Products p in Model)
 {
 
@@ -30,7 +30,7 @@
             <option value="5">5</option>
         </select>
     </td>
-    <td>
+    <td class="tot">
         <span class="text-primary total">$0</span>
     </td>
     <td>

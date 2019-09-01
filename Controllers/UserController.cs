@@ -20,7 +20,37 @@ namespace onlineshop.Controllers
             host2 = obj2;
         }
         public IActionResult checkout()
-        { return View(); }
+        {
+            try {
+                string cooki = Request.Cookies["productcodes"];
+                var codes = cooki.Split('-');
+                IList<string> codesplit = new List<string>();
+                IList<string> finallist = new List<string>();
+                IList<Products> products = new List<Products>();
+            
+                foreach(string s in codes)
+                {
+                   codesplit=s.Split('_');
+                    finallist.Add(codesplit[0]);
+                }
+                foreach(string s in finallist)
+                {
+                    products.Add(pro2.Products.Where(a => a.ProductCode == s).SingleOrDefault());
+                }
+                return View(products);
+
+            }
+            catch (Exception e)
+            {
+                ViewBag.error = e.Message;
+                return View(null);
+
+            }
+            
+
+
+
+            }
 
         public IActionResult myorder()
         { return View(); }

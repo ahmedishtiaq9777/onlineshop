@@ -1,4 +1,5 @@
-<div class="tab-pane" id="shopping-cart">
+@model IEnumerable<onlineshop.Models.Products>
+<div class="tab-pane active" id="shopping-cart">
     <div class="table-responsive">
         <table class="table table-striped">
             <thead>
@@ -10,7 +11,7 @@
                 </tr>
             </thead>
             <tbody id="viewcartitem">
-                <text>CART EMPTY</text>
+                @Html.Partial("_viewcartpartial", Model)
             </tbody>
 
         </table><!-- end table -->
