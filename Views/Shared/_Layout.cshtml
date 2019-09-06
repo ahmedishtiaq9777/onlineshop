@@ -319,6 +319,7 @@
                     });
                     //$("tbody").on("click", "a#kk", function () {
 
+
                     //    var k = $("a#kk").html();
                     //    var k2 = k.split("$")
 
@@ -330,14 +331,17 @@
 
                 $(window).ready(function () {
                    // alert("ahmed");
-                    var array;
+                   // var array;
 
-                    //$("tbody").find("tr>td>span.price").each(function () {
+                    $("tbody").find("tr>td>span.price").each(function () {
+                        var price = $(this).html();
+                        var s = $(this).parent().parent().find("td.tot>span").html(price);
+                       // alert(s);
                     //    var price = $(this).html();
                     //    var psplit = price.split("$");
                     //    array
 
-                    //});
+                    });
                     
                 });
             </script>
