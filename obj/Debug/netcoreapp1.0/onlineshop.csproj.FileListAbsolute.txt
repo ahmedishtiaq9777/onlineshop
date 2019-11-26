@@ -5,8 +5,8 @@ D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\bin\Debug\netcoreapp1.0
 D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\bin\Debug\netcoreapp1.0\onlineshop.pdb
 D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\obj\Debug\netcoreapp1.0\onlineshop.csprojAssemblyReference.cache
 D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\obj\Debug\netcoreapp1.0\onlineshop.csproj.CoreCompileInputs.cache
-D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\obj\Debug\netcoreapp1.0\UserSecretsAssemblyInfo.cs
 D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\obj\Debug\netcoreapp1.0\onlineshop.AssemblyInfoInputs.cache
 D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\obj\Debug\netcoreapp1.0\onlineshop.AssemblyInfo.cs
 D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\obj\Debug\netcoreapp1.0\onlineshop.dll
 D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\obj\Debug\netcoreapp1.0\onlineshop.pdb
+D:\Visual Studio 2015\Projects\onlineshop\src\onlineshop\obj\Debug\netcoreapp1.0\UserSecretsAssemblyInfo.cs
